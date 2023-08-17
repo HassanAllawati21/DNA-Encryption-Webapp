@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>DNA Encryption</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!--links CSS file-->
+    <link rel="stylesheet" href="main.css"/>
+
+    <!--links JS files-->
+    <script src="/javascript files/encryption.js"></script>
+    <script src="/javascript files/decryption.js"></script>
+
+
+    <script>
+        function Encrypt() {
+            var text = document.getElementById('InputText').value;
+            if(text == "")
+            {
+                alert("Input Empty");
+            }
+            else
+            {
+                var encryp = textToDNA(text);
+                alert("Encrypted Text : " + encryp);
+            }
+        }
+
+        function Decrypt() {
+            var text = document.getElementById('InputDNA').value;
+            var key = document.getElementById('InputKey').value;
+            if(text == "" || key == "")
+            {
+                alert("Empty Input");
+            }
+            else
+            {
+                var decryp = DNAtoText(text, key); //change 354 with actual input parameter
+                alert("Decrypted Text : " + decryp);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="title">
+        DNA Encoder
+    </div>
+    <div class="main-body">
+        <div class="encryption-title">
+            Encryption
+        </div>
+        <div>
+            <textarea id="InputText" placeholder="Please enter your text" class="input-textarea"></textarea>
+        </div>
+        <div class="button">
+            <button onclick="Encrypt();" type="button">Submit</button>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <div class="encryption-title">
+            Decryption
+        </div>
+        <div>
+            <textarea id="InputDNA" placeholder="Please enter the DNA" class="input-DNA"></textarea>
+        </div>
+        <div>
+            <textarea id="InputKey" placeholder="Please enter the key" class="input-DNA"></textarea>
+        </div>
+        <div class="button">
+            <button onclick="Decrypt();" type="button">Submit</button>
+        </div>
+    </div>
+</div>
+
+<p id="output"></p>
+</body>
+
+</html>
