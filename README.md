@@ -1,6 +1,3 @@
-# CECS 378 Semester Project
-**Names:** 
-**Due Date:** 
 
 ## **Required Technologies**
 - Integrated Development Environment (IDE)
